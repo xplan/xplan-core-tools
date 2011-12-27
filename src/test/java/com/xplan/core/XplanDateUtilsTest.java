@@ -26,6 +26,7 @@ public class XplanDateUtilsTest {
 		Map result=XplanDateUtils.getByYesterday("2011-05-06","yyyy-mm-dd");
 		org.junit.Assert.assertEquals("2011-05-05", result.get("endTime"));
 	}
+	@SuppressWarnings("static-access")
 	@Test
 	public void testGetByYesterdays() throws ParseException{
 		Calendar ca = Calendar.getInstance();
