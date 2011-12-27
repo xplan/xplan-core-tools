@@ -6,6 +6,8 @@ import java.util.Calendar;
 import java.util.Map;
 
 import org.junit.Test;
+
+import com.xplan.core.properties.XplanDateUtilsProperties;
   /**
    * XplanDateUtilsTest   
    * XplanDateUtils的单元测试类
@@ -29,9 +31,9 @@ public class XplanDateUtilsTest {
 		Calendar ca = Calendar.getInstance();
 		SimpleDateFormat format=new SimpleDateFormat("yyyy-mm-dd");
 		
-		ca.setTime(format.parse("2011-05-07"));
-		ca.set(Calendar.DATE, ca.get(Calendar.DATE)-1);
-		System.out.println(format.format(ca.getTime()));
+		ca.setTime(format.parse("2011-10-13"));
+		//ca.set(Calendar.DATE, ca.get(Calendar.DATE)-1);
+		System.out.println(ca.get(ca.DAY_OF_WEEK)==XplanDateUtilsProperties.WEDNESDAY);
 		
 	}
 	
