@@ -1,5 +1,10 @@
 package com.xplan.core;  
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Map;
+
 import org.junit.Test;
   /**
    * XplanDateUtilsTest   
@@ -13,10 +18,22 @@ import org.junit.Test;
    */
 public class XplanDateUtilsTest {
 	
+	@SuppressWarnings("rawtypes")
 	@Test
 	public void testGetByYesterday(){
-		String result=XplanDateUtils.getByYesterday("2011-05-06","yyyy-mm-dd");
-		org.junit.Assert.assertEquals("2011-05-05", result);
+		Map result=XplanDateUtils.getByYesterday("2011-05-06","yyyy-mm-dd");
+		org.junit.Assert.assertEquals("2011-05-05", result.get("endTime"));
 	}
+	@Test
+	public void testGetByYesterdays() throws ParseException{
+		Calendar ca = Calendar.getInstance();
+		SimpleDateFormat format=new SimpleDateFormat("yyyy-mm-dd");
+		
+		ca.setTime(format.parse("2011-05-07"));
+		ca.set(Calendar.DATE, ca.get(Calendar.DATE)-1);
+		System.out.println(format.format(ca.getTime()));
+		
+	}
+	
 	
 }
