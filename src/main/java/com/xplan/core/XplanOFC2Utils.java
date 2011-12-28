@@ -1,4 +1,6 @@
 package com.xplan.core;  
+
+import java.util.List;
   /**
    * 
    *    
@@ -41,6 +43,15 @@ public class XplanOFC2Utils {
 			setp=30;
 		}
 		return setp;
+	}
+	
+public	Integer getBigValue(List<Number> num){
+		
+		 
+		
+		
+		return null;
+		
 	}
 	
 	
